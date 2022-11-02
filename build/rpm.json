@@ -1,0 +1,14 @@
+{
+    "name": "mod-gearman-worker-go",
+    "release": "!release!",
+    "summary": "a Mod-Gearman-Worker rewrite in golang",
+    "description": "a Mod-Gearman-Worker rewrite in golang",
+    "license": "GNU General Public License v3.0",
+    "url": "https://github.com/ConSol/mod-gearman-worker-go",
+    "files": [{
+        "from": "bin/mod_gearman_worker.go",
+        "to": "%{_bindir}/",
+        "base": "bin/",
+        "type": ""
+    }]
+}
