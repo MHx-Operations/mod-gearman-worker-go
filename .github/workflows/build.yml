@@ -21,7 +21,7 @@ jobs:
           echo "Building version ${{ env.VERSION }}"
           GOOS=linux GOARCH=amd64 go build -ldflags "-X main.version=$VERSION" -o bin/mod_gearman_worker.go cmd/mod_gearman_worker/main.go
           sed -i "s/\!release\!/${{ github.run_id }}/" build/rpm.json
-          go-bin-rpm generate -o mod-gearman-worker-go.rpm --version ${{ env.VERSION }} --arch amd64
+          go-bin-rpm generate -o mod-gearman-worker-go.rpm --file build/rpm.json --version ${{ env.VERSION }} --arch amd64
           ls -lah mod-gearman-worker-go.rpm.rpm
 
       - name: Create release
